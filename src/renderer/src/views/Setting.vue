@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { useConfigStore } from '@renderer/store/useConfigStore'
 import useWallpaper from '@renderer/composable/useWallpaper'
-import { ref } from 'vue'
 const { config } = useConfigStore()
 const { setImageSaveDirectory } = useWallpaper()
-const a = ref('b')
 </script>
 <template>
   <main class="p-3 bg-[#34495e] text-white flex flex-col justify-between">

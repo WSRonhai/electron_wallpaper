@@ -11,9 +11,8 @@ const api = {
   downloadImage: (url: string) => {
     ipcRenderer.send('downloadImage', url)
   },
-  setImageSaveDirectory: (dir: string) => {
-    alert('adb')
-    // ipcRenderer.send('setImageSaveDirectory', dir)
+  setImageSaveDirectory: () => {
+    ipcRenderer.send('setImageSaveDirectory')
   }
 }
 
