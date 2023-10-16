@@ -1,7 +1,7 @@
-import { dialog, ipcMain } from 'electron'
+import { IpcMainEvent, dialog, ipcMain } from 'electron'
 import { downloadFile } from '../utils'
 
-ipcMain.on('downloadImage', async (_event, url: string) => {
+ipcMain.on('downloadImage', async (_event: IpcMainEvent, url: string) => {
   const fileName = url.split('/').pop()!
   const res = await dialog.showSaveDialog({
     title: '下载图片',

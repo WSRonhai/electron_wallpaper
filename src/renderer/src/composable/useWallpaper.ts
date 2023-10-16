@@ -8,9 +8,14 @@ export default () => {
   const downloadImage = () => {
     window.api.downloadImage(config.url)
   }
+  const openExternalLink = (url: string) => {
+    console.log(111, url)
+
+    window.api.openExternalLink(url)
+  }
   //设置图片壁纸保存目录
   const setImageSaveDirectory = () => {
     window.api.setImageSaveDirectory(config.saveDirectory)
   }
-  return { setWallpaper, downloadImage, setImageSaveDirectory }
+  return { setWallpaper, downloadImage, setImageSaveDirectory, openExternalLink }
 }

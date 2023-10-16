@@ -6,7 +6,7 @@ declare global {
     api: {
       setWallpaper: (url: string) => void
       downloadImage: (url: string) => void
+      openExternalLink: (url: string) => void
       setImageSaveDirectory: (url: string) => Promise<string>
-    }
   }
 }

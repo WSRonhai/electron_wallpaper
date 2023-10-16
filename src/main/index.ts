@@ -2,12 +2,15 @@ import { app, shell, BrowserWindow } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+import { createTray } from './tray'
 import './ipcMain'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 400,
     height: 370,
+    //隐藏任务栏图标
+    skipTaskbar: true,
     show: false,
     autoHideMenuBar: true,
     alwaysOnTop: true,
@@ -47,6 +50,11 @@ function createWindow(): void {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  //创建自定义托盘图标
+  createTray(createWindow)
+  //隐藏苹果dock图标
+  if (process.platform == 'darwin') app.dock.hide()
+
   // Set app user model id for windows
   electronApp.setAppUserModelId('com.electron')
 

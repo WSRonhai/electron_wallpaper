@@ -43,9 +43,7 @@ onMounted(() => {
         设为壁纸
       </div>
       <div class="px-3 text-sm text-gray-700 flex justify-between items-center nodrag">
-        <div class="">
-          晚生隆海 <router-link to="https://www.pythl.com">www.pythl.com</router-link>
-        </div>
+        <div class="">晚生隆海</div>
         <div class="hover:font-bold cursor-pointer" @click="downloadImage">下载壁纸</div>
       </div>
     </section>

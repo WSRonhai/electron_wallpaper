@@ -13,6 +13,11 @@ const api = {
   },
   setImageSaveDirectory: () => {
     ipcRenderer.send('setImageSaveDirectory')
+  },
+  openExternalLink: (url: string) => {
+    console.log(222, url)
+
+    ipcRenderer.send('openExternalLink', url)
   }
 }
 
