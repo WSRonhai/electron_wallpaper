@@ -1,3 +1,5 @@
 import './setWallpaper'
 import './downloadImage'
 import './openExternalLink'
+import './setImageDirectory'
+import './checkDirectory'

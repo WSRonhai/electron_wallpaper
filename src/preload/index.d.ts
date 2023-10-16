@@ -4,9 +4,11 @@ declare global {
   interface Window {
     electron: ElectronAPI
     api: {
-      setWallpaper: (url: string) => void
+      setWallpaper: (url: string, path: string) => void
       downloadImage: (url: string) => void
       openExternalLink: (url: string) => void
-      setImageSaveDirectory: (url: string) => Promise<string>
+      checkDirectory: (url: string) => Promise<boolean>
+      setImageDirectory: (url: string) => Promise<string>
+    }
   }
 }

@@ -2,7 +2,7 @@
 import { useConfigStore } from '@renderer/store/useConfigStore'
 import useWallpaper from '@renderer/composable/useWallpaper'
 const { config } = useConfigStore()
-const { setImageSaveDirectory, openExternalLink } = useWallpaper()
+const { setImageDirectory, openExternalLink } = useWallpaper()
 </script>
 <template>
   <main class="p-3 bg-[#34495e] text-white flex flex-col justify-between">
@@ -15,17 +15,16 @@ const { setImageSaveDirectory, openExternalLink } = useWallpaper()
           size="normal"
           readonly
         ></el-input>
-        <el-button type="primary" size="default" @click="setImageSaveDirectory"
+        <el-button type="primary" size="default" @click="setImageDirectory"
           >选择图片保存目录</el-button
         >
       </div>
     </section>
     <div class="text-sm opacity-30 font-mono font-light flex flex-col items-center mb-5">
       <div class="">隆海技术站出品</div>
-      <div class="cursor-pointer" @click="openExternalLink('https://www.pythl.com')">
+      <div class="cursor-pointer nodrag" @click="openExternalLink('https://www.pythl.com')">
         www.pythl.com
       </div>
-      <!-- <div class="">pythl.com</div> -->
     </div>
   </main>
 </template>

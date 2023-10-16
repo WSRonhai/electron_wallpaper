@@ -38,7 +38,7 @@ onMounted(() => {
       />
       <div
         @click="setPaper"
-        class="bg-gray-50 text-center py-3 m-3 rounded-lg hover:bg-slate-400 cursor-pointer duration-300 opacity-80 shadow-sm nodrag"
+        class="bg-gray-50 text-center py-3 m-3 rounded-lg hover:bg-slate-300 cursor-pointer duration-300 opacity-80 shadow-sm nodrag"
       >
         设为壁纸
       </div>

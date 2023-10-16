@@ -3,11 +3,9 @@ import { dialog } from 'electron'
 import { createWriteStream } from 'node:fs'
 import { pipeline } from 'node:stream'
 import { promisify } from 'node:util'
-import { resolve } from 'node:path'
 
-export const downloadFile = async (url: string, toFile?: string) => {
-  const localFile = toFile || resolve(__dirname, '../../wallpaper', url.split('/').pop()!)
-  console.log(localFile)
+export const downloadFile = async (url: string, localFile: string) => {
+  // const localFile = resolve(path, url.split('/').pop()!)
 
   //1.下载图片 2.设置壁纸
   const streamPipeline = promisify(pipeline)

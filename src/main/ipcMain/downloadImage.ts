@@ -4,8 +4,8 @@ import { downloadFile } from '../utils'
 ipcMain.on('downloadImage', async (_event: IpcMainEvent, url: string) => {
   const fileName = url.split('/').pop()!
   const res = await dialog.showSaveDialog({
-    title: '下载图片',
-    message: '隆海的桌面壁纸',
+    title: '保存壁纸',
+    message: '喜荣桌面壁纸',
     defaultPath: fileName,
     properties: ['createDirectory']
   })

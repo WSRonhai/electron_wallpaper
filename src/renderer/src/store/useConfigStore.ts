@@ -7,7 +7,7 @@ export const useConfigStore = defineStore(
   () => {
     const config = ref({
       url: '',
-      saveDirectory: 'adb'
+      saveDirectory: ''
     })
     return { config }
   },
