@@ -9,6 +9,7 @@ declare global {
       openExternalLink: (url: string) => void
       checkDirectory: (url: string) => Promise<boolean>
       setImageDirectory: (url: string) => Promise<string>
+      minimizeWindow: () => void
     }
   }
 }

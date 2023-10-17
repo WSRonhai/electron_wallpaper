@@ -1,8 +1,9 @@
-import { app, shell, BrowserWindow } from 'electron'
+import { app, shell, BrowserWindow, ipcMain, IpcMainEvent } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import { createTray } from './tray'
+
 import './ipcMain'
 function createWindow(): void {
   // Create the browser window.
@@ -44,6 +45,12 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+  // 监听渲染进程发送的最小化窗口请求
+  ipcMain.on('minimize-window', () => {
+    if (mainWindow) {
+      mainWindow.minimize()
+    }
+  })
 }
 
 // This method will be called when Electron has finished

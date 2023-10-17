@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { Pic, SettingOne } from '@icon-park/vue-next'
+import { Pic, SettingOne, Minus } from '@icon-park/vue-next'
+const minimize = () => {
+  window.api.minimizeWindow()
+}
 </script>
 
 <template>
@@ -19,6 +22,19 @@ import { Pic, SettingOne } from '@icon-park/vue-next'
         size="18"
         @click="$router.push({ name: 'setting' })"
         :class="{ iconColor: $route.name == 'setting' }"
+      />
+      <!-- <close-one
+        theme="multi-color"
+        size="18"
+        @click="minimize"
+        :fill="['#575151', '#ffffff', '#575151', '#ffffff']"
+      /> -->
+      <minus
+        theme="multi-color"
+        size="18"
+        class="cursor-pointer"
+        @click="minimize"
+        :fill="['#575151', '#ffffff', '#575151', '#ffffff']"
       />
     </section>
   </main>

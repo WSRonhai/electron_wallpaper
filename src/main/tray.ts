@@ -13,13 +13,22 @@ const createTray = (createWindow: () => void) => {
     {
       label: '设置壁纸',
       click: () => {
-        if (BrowserWindow.getAllWindows().length == 0) createWindow()
+        // if (BrowserWindow.getAllWindows().length == 0) createWindow()
+        // 在点击 "设置壁纸" 时创建窗口
+        createWindow()
       }
     },
     { label: '退出', role: 'quit' }
   ])
   tray.setToolTip('荣喜桌面壁纸')
   tray.setContextMenu(contextMenu)
+
+  tray.on('click', () => {
+    // 兼容 Mac，在点击托盘图标时创建窗口
+    if (!BrowserWindow.getAllWindows().length) {
+      createWindow()
+    }
+  })
 }
 
 export { createTray }

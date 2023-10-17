@@ -23,6 +23,10 @@ const api = {
   openExternalLink: (url: string) => {
     console.log(222, url)
     ipcRenderer.send('openExternalLink', url)
+  },
+  //最小化窗口
+  minimizeWindow: () => {
+    ipcRenderer.send('minimize-window')
   }
 }
 
